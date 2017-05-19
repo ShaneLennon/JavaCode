@@ -6,6 +6,7 @@ public class MainForcar {
 	{
 		MainForcar c2 = new MainForcar();
 		
+		//
 		Car c1 = new Car();
 		
 		System.out.println(c1);

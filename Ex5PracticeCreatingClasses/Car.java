@@ -5,10 +5,12 @@ public class Car
 	private String make;
 	private String model;
 	private double engineSize;
+	private int carNumber;
 	public static int carCounter;
 	//Constructors
 	public Car()
 	{
+		carNumber = carCounter;
 		carCounter++;
 	}
 	
@@ -70,8 +72,13 @@ public class Car
 		return engineSize;
 	}
 	
+	public int getCarNumber()
+	{
+		return carNumber;
+	}
+	
 	public String toString()
 	{
-		return String.format("Make of the car is %s\nModel if the car is %s\nEngine size of the car is %.1f\nCar Counter %d \n",make,model,engineSize,carCounter);
+		return String.format("Make of the car is %s\nModel of the car is %s\nEngine size of the car is %.1f\nCar Number %d \n",make,model,engineSize,carNumber);
 	}
 }
