@@ -1,4 +1,4 @@
-package Ex5PracticeCreatingClasses;
+package Ex6ArraysOfObjects;
 
 public class PersonalComputer 
 {

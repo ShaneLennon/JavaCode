@@ -1,4 +1,4 @@
-package sheet52DArrays;
+package sheet4BArrays;
 
 import java.util.concurrent.SynchronousQueue;
 

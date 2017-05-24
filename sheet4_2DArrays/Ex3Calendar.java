@@ -1,4 +1,4 @@
-package sheet52DArrays;
+package sheet4_2DArrays;
 
 public class Ex3Calendar {
 

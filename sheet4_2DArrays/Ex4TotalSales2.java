@@ -1,18 +1,20 @@
-package sheet52DArrays;
+package sheet4_2DArrays;
 
 import java.util.concurrent.SynchronousQueue;
 
-public class Ex4TotalSales {
+public class Ex4TotalSales2 {
 	public static void main(String[] args)
 	{
-		Ex4TotalSales ex4 = new Ex4TotalSales();
+		Ex4TotalSales2 ex4 = new Ex4TotalSales2();
 
 		int[][] sales = { { 1, 1, 100 }, { 1, 2, 200 }, { 1, 3, 400 }, { 1, 1, 300 }, { 2, 4, 400 }, { 2, 5, 500 },
 				{ 2, 3, 600 }, { 2, 3, 600 }, { 3, 2, 1000 }, { 3, 3, 800 }, { 3, 4, 300 }, { 3, 4, 500 },
 				{ 4, 1, 200 }, { 4, 3, 300 }, { 4, 5, 500 } };
 		
-		//ex4.printArray(sales);
+		ex4.printArray(sales);
 		
+		
+		/*Setup the matrix to hold a sum of all the sales for each person for each product*/
 		int [][] totals2 = new int[5][4];
 		
 		int [][] table = ex4.calculateTotal(totals2, sales);
@@ -39,7 +41,8 @@ public class Ex4TotalSales {
 	//                       
 	public int [][] calculateTotal(int [][] totals2, int[][] sales) 
 	{
-	    // put in a method
+
+		/*Loop to populate the matrix*/
 		for(int k = 0; k < 4; k++)
 		{
 			for (int i = 0; i < sales.length; i++) 

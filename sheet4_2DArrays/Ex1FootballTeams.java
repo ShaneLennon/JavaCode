@@ -1,4 +1,4 @@
-package sheet52DArrays;
+package sheet4_2DArrays;
 import java.util.Scanner;
 
 public class Ex1FootballTeams {

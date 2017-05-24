@@ -50,7 +50,7 @@ public class Ex1LargestSmallestSearchingSorting {
 		int smallest = numbers[0];
 		int index = 0;
 		/*The numbers array is looped through*/
-		for(int i = 0; i < numbers.length; i ++)
+		for(int i = 1; i < numbers.length; i ++)
 		{	/*The first value in the numbers is compared to the value in smallest
 		 	If the value in numbers is smaller than smallest then this value is assigned to smallest*/
 			if(numbers[i] < smallest)
@@ -69,8 +69,10 @@ public class Ex1LargestSmallestSearchingSorting {
 		int largest = numbers[0];
 		/*index holds the index of the largest number in the array*/
 		int index = 0;
-		/*The numbers array is looped through*/
-		for(int i = 0; i < numbers.length; i ++)
+		/*The numbers array is looped through. I cannot use 'i' for the position the largest is found at
+		 * because 'i' will always be 20 when the loop is finished. I need another variable to hold the
+		 * position of the largest element*/
+		for(int i = 1; i < numbers.length; i ++)
 		{	/*checks to see if the number in the array is bigger than the current value of largest*/
 			if(numbers[i] > largest)
 			{
@@ -94,12 +96,14 @@ public class Ex1LargestSmallestSearchingSorting {
 	
 	/*Searches an array of numbers for a specific value*/
 	public void searchArray(int [] numbers, int num)
-	{
+	{	/*Loop through the whole array*/
 		for(int i = 0; i < numbers.length; i++)
-		{
+		{	/*When a match is found*/
 			if(numbers[i] == num)
 			{
 				System.out.println(num+" was found at position "+i);
+				/*Exits the loop after the first match is found*/
+				break;
 			}
 		}
 	}
@@ -150,42 +154,56 @@ public class Ex1LargestSmallestSearchingSorting {
 	
 	public void sortArray(int [] numbers)
 	{
+		//Get the length of the numbers array
 		int size = numbers.length;
+		//Create a new int array of length 'size'
 		int [] numbers3 = new int[size];
+		//set smallest value to zero
 		int smallest = 0;
 		
+		//Starts off at j = 0
 		for(int j = 0; j < size; j++)
 		{
+			//Loop through the numbers array.
+			//find the smallest element in the numbers array and assign it to the smallest variable
 			smallest = findSmallestElement2(numbers);
+			//Place the smallest element of the numbers array at the first position of the numbers3 array 
 			numbers3[j] = smallest;
 			
 			//System.out.println("Numbers 3");
 			//printArray(numbers3);
+			//Loop through the numbers array  
 			for(int i = 0; i < size; i++)
 			{
+				//When the value in the numbers array matches the value of the smallest
+				//replace the value in the numbers array with '200'
+				//The loop then searches for the next smallest element
 				if(numbers[i] == smallest)
 				{
 					numbers[i] = 200;
 				}
 			}
 		}
-		System.out.println("Numbers 3");
+		System.out.println("Numbers 2	");
 		//printArray(numbers3);
 		
 		int count = 0;
+		//Loops through the numbers3 array
 		for(int i = 0; i < numbers3.length; i++)
 		{
+			//counts the number of values not equal to 200
 			if(numbers3[i] != 200)
 			{
 				count++;
 			}
 		}
-		System.out.println("count is "+count);
+		//System.out.println("count is "+count);
 		
+		//create a new int array of length 'count'
 		int [] numbers2 = new int[count];
 		
 		//printArray(numbers2);
-		
+		//adds the values in the numbers3 array to the numbers2 array
 		for(int k = 0; k < count; k++)
 		{
 			numbers2[k] = numbers3[k];
